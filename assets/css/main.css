@@ -1,0 +1,24 @@
+h1 {
+  font-family: 'Cinzel', serif;
+}
+
+h1 sub {
+  margin: auto 10px;
+  font-size: 0.4em;
+  font-family: 'Exo 2', sans-serif;
+  /* color: #152dac; */
+}
+
+.info {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.info ul {
+  list-style: none;
+  margin: auto 15px;
+}
+
+.info ul.title {
+  text-align: right;
+}
