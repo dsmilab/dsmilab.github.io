@@ -21,7 +21,7 @@ let App = React.createClass({
         </div>
         <div className="container">
           <div className="row">
-            <div className="column" style={{marginTop: '25%'}}>
+            <div className="column" style={{ marginTop: this.state.currentPage == 'home' ? '25%' : '5%'}}>
               <Content page={this.state.currentPage}/>
             </div>
           </div>

@@ -3,6 +3,7 @@ import Home from './Home';
 import Cv from './Cv';
 import Research from './Research';
 import Project from './Project';
+import Publications from './Publications';
 
 let Content = React.createClass({
   render: function() {
@@ -19,6 +20,9 @@ let Content = React.createClass({
       break;
       case 'project':
         content = <Project />;
+      break;
+      case 'publications':
+        content = <Publications />;
       break;
 
     }

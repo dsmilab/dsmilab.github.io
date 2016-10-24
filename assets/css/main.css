@@ -78,6 +78,49 @@ h1 sub {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: #1EAEDB;
+}
+
+.tab {
+  margin: 0px auto 40px;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  list-style: none;
+  font-size: 1.2em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tab a {
+  position: relative;
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.tab a:hover {
+  color: black;
+}
+
+.tab a:hover::after {
+  content: "";
+  background-color: #1EAEDB;
+  position: absolute;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+  height: 2px;
+}
+
+.tab a.active::after {
+  content: "";
+  background-color: #1EAEDB;
+  position: absolute;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+  height: 3px;
 }

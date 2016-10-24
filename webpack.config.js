@@ -14,6 +14,10 @@ module.exports = {
       test: /\.(jpe?g|png|gif|svg)$/i, 
       loader: "file-loader?name=[path][name].[ext]"
     },
+    {
+      test: /\.json$/, 
+      loader: "json-loader"
+    },
     { 
       test: [/\.css$/],
       exclude: /node_modules/,
