@@ -1,77 +1,64 @@
-h1 {
-  font-family: 'Cinzel', serif;
+/* Layout */
+.container {
+  margin: 30px 20%; 
 }
 
-h1 sub {
-  margin: auto 10px;
-  font-size: 0.4em;
-  font-family: 'Exo 2', sans-serif;
+
+/* Base Styles */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; 
+}
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; 
 }
 
-.info {
-  display: flex;
-  flex-flow: row wrap;
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; 
+}
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
+h1, h2 {
+  font-family: 'Allerta', sans-serif;
+}
+p {
+  margin-top: 0; 
 }
 
-.info ul {
-  list-style: none;
-  margin: auto 15px;
+
+/* Links */
+a, a:hover {
+  color: black; 
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none; 
 }
 
-.info ul.title {
-  text-align: right;
-}
 
-.nav {
-  position: fixed;
-  left: -170px;
-  top: 0;
-  bottom: 0;
-  transition: 1s;
-  background-color: #1EAEDB;
-}
-
-.nav:hover {
-  transition: 1s;
-  left: 0;
-}
-
-.nav a {
-  margin: auto;
-  font-family: 'Exo 2', sans-serif;
-  display: block;
+/* Utilities */
+.text-center {
   text-align: center;
-  color: white;
-  text-decoration: none;
-  padding: 10px 10px;
 }
-
-.nav a:hover:not(:first-of-type) {
-  background-color: black;
-  opacity: 0.3;
-}
-
-.nav a:not(:first-of-type).active {
-  background-color: black;
-  opacity: 0.3;
-}
-
-#profile-picture {
-  margin: 30px;
-  width: 100px;
-  height: 100px;
-  border: 5px white solid;
-  border-radius: 50%;
-}
-
-.sub-info {
+.cv-sub-info {
   margin: 5px auto;
 }
-
 .underline {
   position: relative;
 }
-
 .underline::after {
   content: "";
   position: absolute;
@@ -79,48 +66,22 @@ h1 sub {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #1EAEDB;
+  background-color: #24248f;
 }
 
-.tab {
-  margin: 0px auto 40px;
-  font-family: 'Merriweather Sans', sans-serif;
-  text-align: center;
-  list-style: none;
-  font-size: 1.2em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.tab a {
-  position: relative;
-  display: block;
-  color: black;
-  text-decoration: none;
+/* Nav */
+nav {
+  background-color: #24248f;
+  padding: 15px 15px;
+  margin: 30px auto;
+  font-family: 'Hammersmith One', sans-serif;
+  text-transform: uppercase;
 }
-
-.tab a:hover {
-  color: black;
+nav a {
+  color: white;
+  margin: auto 50px;
 }
-
-.tab a:hover::after {
-  content: "";
-  background-color: #1EAEDB;
-  position: absolute;
-  bottom: -5px;
-  left: -10px;
-  right: -10px;
-  height: 2px;
-}
-
-.tab a.active::after {
-  content: "";
-  background-color: #1EAEDB;
-  position: absolute;
-  bottom: -5px;
-  left: -10px;
-  right: -10px;
-  height: 3px;
+nav a:hover {
+  color: #5c5cd6;
 }
