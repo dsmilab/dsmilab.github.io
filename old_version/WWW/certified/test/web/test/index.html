@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes" />
+<title>Oral-B母親節</title>
+<style type="text/css">
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial,SimHei;
+  font-size: 63%;
+  -webkit-text-size-adjust: none;
+  background-color: #003578;
+}
+img{ 
+  border:none; 
+  vertical-align:top
+}
+#content{
+	width: 640px;
+	margin: 0 auto;
+	position: relative;
+	background-color: #003578;
+	overflow:hidden;
+}
+#main{
+	background-color: #FFF;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+input[type="radio"]{-webkit-appearance: none;width:175px; height:233px;border:4px solid #C2C2C2 ; margin:10px; box-sizing: content-box}
+input[type="radio"]:checked{ -webkit-filter: none; border:4px solid #C51752}
+#p1{background:url(images/p1.jpg);margin-left:25px}
+#p2{background:url(images/p2.jpg)}
+#p3{background:url(images/p3.jpg)}
+.btn{
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.btn img{
+	margin: 0  20px  0  20px;
+}
+
+.ifile {position:absolute;opacity:0;filter:alpha(opacity=0);z-index:200;height: 80px; width: 640px;}
+#box{position: relative;}
+#framePic{position:absolute; z-index: 200; }
+#cameraPhoto{position:absolute; z-index: 100;}
+
+</style>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36260471-43', 'vpon.com');
+        ga('send', 'pageview');
+
+    </script>
+<script src='http://tw.img.adon.vpon.com/img/xpon.js'></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://tw.img.adon.vpon.com/img/jquery.blockui.js"></script>
+<script src="page.js"></script>
+<script src="binaryajax.js"></script>        <!-- 判斷相片方向 -->
+<script src="exif.js"></script>              <!-- 判斷相片方向 -->
+<script src="html2canvas.js"></script>
+
+
+    <script>
+        window.addEventListener('unload',function(){document.getElementById("inputImg").value = ''},false);
+        jQuery(document).ready(function(){
+            jQuery('input[type=radio][name=RadioGroup1]').on('change', function(){
+                if(document.form1.RadioGroup1[0].checked){
+                    framePic.innerHTML = '<img id="selFramePic" src="images/photo1.png" width="227" height="301"/>';
+                }
+                if(document.form1.RadioGroup1[1].checked){
+                    framePic.innerHTML = '<img id="selFramePic" src="images/photo2.png" width="227" height="301"/>';
+                }
+                if(document.form1.RadioGroup1[2].checked){
+                    framePic.innerHTML = '<img id="selFramePic" src="images/photo3.png" width="227" height="301"/>';
+                }
+
+            });
+        });
+
+
+    </script>
+	
+	
+	<script>
+	
+	</script>
+
+</head>
+<body>
+
+
+<div id="content">
+  <img src="images/top.jpg">
+
+  <div id="area1">
+      <img src="images/step1.png">
+      <div id="main"><img src="images/t1.png">
+          <form id="form1" name="form1">
+              <label><input type="radio" name="RadioGroup1" value="p1" id="p1" checked></label>
+              <label><input type="radio" name="RadioGroup1" value="p2" id="p2"></label>
+              <label><input type="radio" name="RadioGroup1" value="p3" id="p3"></label>
+          </form>
+          <img src="images/note1.png">
+      </div>
+
+      <div id="btn" class="btn">
+          <input type="file" name="inputImg" id="inputImg" class="ifile" accept="image/*;capture=camera">
+          <img src="images/btn_open.png">		  
+      </div>
+	  <div id="next" class="btn" " style="display: none"><img id src="images/btn_next.png"></duv>
+  </div>
+  <img src="images/footer.jpg">
+</div>
+
+<form id="CompleteForm" name="CompleteForm" action="http://tw.img.adon.vpon.com/img/8a808182453c3b6d014568bda839576d/upload.php" method="post">
+    <input type="hidden" id="picTxt" name="picTxt" value=""/>
+    <input type="hidden" id="imei" name="imei" value="${imei}"/>
+</form>
+
+<div id="box" >
+    <div id="framePic"><img id="selFramePic" src="images/photo1.png" width="227" height="301"/></div>
+    <div id="cameraPhoto"></div>
+</div>
+ 
+<input type="hidden" id="orientation" name="orientation" value=""/>
+<input type="hidden" id="device" name="device" value=""/>
+<canvas id="canvas" class="img" width="480" height="640" ></canvas>
+<img id="newImg" name="newImg"  />
+
+
+
+<script>
+
+    var inputImg = document.getElementById( "inputImg" );
+    if ( typeof  FileReader === 'undefined' ) {
+        //cameraPhoto.innerHTML =  "抱歉，你的瀏覽器不支持FileReader " ;
+        inputImg.setAttribute( 'disabled' , 'disabled' );
+    } else {
+        inputImg.addEventListener( 'change' ,checkSelected, false);
+    }
+
+	
+</script>
+<script>
+    jQuery("#next").click(function() {
+        html2canvas( jQuery('#box'), {
+            onrendered: function (canvas) {
+                var newImg = document.getElementById('newImg');
+                var data = canvas.toDataURL();
+                alert(data);
+                newImg.src =data;    }
+
+        });
+
+});
+  </script>
+
+
+</body>
+</html>

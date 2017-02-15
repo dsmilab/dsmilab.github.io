@@ -41,8 +41,11 @@ p {
 
 
 /* Links */
-a, a:hover {
-  color: black; 
+a:link, a:visited, a:active{
+  color: black;
+}
+a:hover {
+  color: #5c5cd6;
 }
 a:link, a:visited, a:hover, a:active {
   text-decoration: none; 
@@ -78,10 +81,16 @@ nav {
   font-family: 'Hammersmith One', sans-serif;
   text-transform: uppercase;
 }
-nav a {
+nav a:link, nav a:visited {
   color: white;
   margin: auto 50px;
 }
 nav a:hover {
   color: #5c5cd6;
+}
+
+/* Header Name */
+#name{
+  color: black;
+  text-decoration: none; 
 }

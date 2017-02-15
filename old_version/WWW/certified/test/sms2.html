@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width; initial-scale=0.5; maximum-scale=1.0; minimum-scale=0.5; user-scalable=yes;" />
+<title>資生堂</title>
+<style type="text/css">
+
+body{ background:#fff; margin:0 ; padding:0; font-family: Arial,SimHei;-webkit-text-size-adjust: none; font-size:63%;}
+img{ border:none; vertical-align:top;}
+#content { width:640px ; margin:0 auto; text-align:center; color:#777; padding-bottom:60px;}
+
+
+</style>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script type="text/javascript">
+   
+    function submitData(){
+
+        var cellNo = jQuery.trim(jQuery("#phone").val());
+        var name = jQuery.trim(jQuery("#name").val());
+        var storeName = jQuery("#selectStore option:selected").text();
+
+        window.location = "http://s1.vpon.com/shiseido/index.php?phone="+cellNo+"&store="+storeName;
+
+    }
+	
+	
+	
+	
+
+</script>
+
+
+
+</head>
+
+
+<body>
+<div id="content">
+
+<div id="tab">
+     <p>姓名:<input type="text" name="name" id="name"></p>
+	 <p>email:<input type="text" name="mail" id="mail"></p>
+     <p>手機:<input type="tel" name="phone" id="phone" maxlength="10"></p>
+     <form name="selForm"><p>選擇兌換櫃點&nbsp;<select name="selectStore" id="selectStore">
+         <option value="">請選擇</option>
+         <option value="新光三越台北信義A8國際櫃">新光三越台北信義 A8 國際櫃</option>
+     </select></p></form>  
+</div>
+
+<BUTTON style="WIDTH: 150px; HEIGHT: 80px; font-size:50px" onclick="submitData()">送出</BUTTON>
+</div>
+</body>
+</html>
